@@ -1,4 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/*@import '~@ngx-share/button/themes/default/default-theme';*/
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body,html{
+    height: 100%;
+}
+
+body{
+    margin: 0;
+    background-color: #FAFAFA;
+}
+
+a{
+    text-decoration: none;
+    color: #0a569e;
+}
+
+@font-face{
+    font-family: 'Google Sans';
+    src: url('assets/fonts/googlesans/GoogleSans-Regular.ttf')format('truetype')
+}
+
+* {
+    font-family: 'Google Sans','GoogleSans',Roboto, Arial, sans-serif;
+    line-height: 1.4;
+}
+
+.mat-expansion-panel-content {
+    font-size: 16px !important;
+}
