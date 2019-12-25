@@ -1,0 +1,10 @@
+a{
+    position:fixed;
+    bottom:40px;
+    cursor: pointer;
+    color: white;
+    background-color: #073C65;
+    font-size: 18px;
+    z-index: 999999;
+    right:5%
+}
