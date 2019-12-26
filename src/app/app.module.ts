@@ -1,17 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler, LOCALE_ID } from '@angular/core';
 
 
 //Imported modules
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
 
 //Declared component/modules
 import { FooterComponent } from './components/footer/footer.component';
@@ -22,7 +24,21 @@ import { ErrorDialogComponent } from './components/error-dialog/error-dialog.com
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { BackToTopComponent } from './components/back-to-top/back-to-top.component';
 import { SharedComponentsModule } from './modules/shared-components/shared-components.module';
-import { HomepageModule } from './modules/homepage/homepage.module';
+import { ErrorHandlerService } from './services/error-handler.service';
+import { HttpService } from './services/http.service';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { TitleManagerService } from './services/title-manager.service';
+import { MetaManagerService } from './services/meta-manager.service';
+import { UserService } from './services/user.service';
+import { AuthService } from './services/auth.service';
+
+import {
+  faHome, faLink, faPlusCircle, faTimesCircle, faArrowCircleUp, faArrowCircleDown, faInfoCircle, faBook, faEnvelope, faLock, faCheck, faEdit,
+  faTrash, faPlusSquare, faEye, faList, faWrench, faBars, faLongArrowAltDown, faSignInAlt,
+  faArrowUp, faLongArrowAltUp, faUserSlash, faUserPlus, faUser, faHammer, faTrophy, faQuestion, faAngleDown, faAngleUp, faExternalLinkAlt
+} from '@fortawesome/free-solid-svg-icons';
+import { faNewspaper, faCopyright } from '@fortawesome/free-regular-svg-icons';
+import { faFacebookF, faTwitter, faTelegram, faYoutube, faTelegramPlane, faInstagram, faGithub, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 
 @NgModule({
@@ -47,9 +63,26 @@ import { HomepageModule } from './modules/homepage/homepage.module';
     MatMenuModule,
     MatDialogModule,
     FlexLayoutModule,
-    HomepageModule
+    HttpClientModule,
+    MatSidenavModule,
+    MatButtonModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpService, multi: true },
+    { provide: LOCALE_ID, useValue: "it-IT" },
+    { provide: ErrorHandler, useClass: ErrorHandlerService },
+    AuthService,
+    UserService,
+    MetaManagerService,
+    TitleManagerService,
+    ErrorHandlerService
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    library.addIcons(faHome, faInfoCircle, faLink, faWrench, faTelegramPlane, faPlusCircle, faSignInAlt, faTimesCircle, faNewspaper, faBook, faEnvelope, faWhatsapp, faLock, faTrash, faCopyright, faArrowUp, faPlusSquare, faEye, faList,
+      faFacebookF, faTwitter, faTelegram, faAngleUp, faHammer, faArrowCircleUp, faExternalLinkAlt, faAngleDown, faArrowCircleDown, faYoutube, faInstagram, faGithub, faCheck, faEdit, faUser, faBars, faLongArrowAltDown, faLongArrowAltUp, faUserSlash, faUserPlus, faTrophy, faQuestion);
+  }
+
+}

@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
-import { HttpClient } from '@angular/common/http';
 import { SliderService } from '../services/slider.service';
 import { Subscription } from 'rxjs';
 
@@ -20,7 +19,7 @@ export class WelcomeComponent implements OnDestroy {
     "(min-width: 1920px)": "xl"
   }
 
-  constructor(private bpObserver: BreakpointObserver, private http: HttpClient, private sliderSVC: SliderService) {
+  constructor(private bpObserver: BreakpointObserver, private sliderSVC: SliderService) {
     this.watcher = bpObserver.observe([
       Breakpoints.XSmall,
       Breakpoints.Small,

@@ -4,7 +4,7 @@ import { CompetitionModel } from 'src/app/models/competition.model';
 import { CompetitionsService } from '../services/competitions.service';
 
 @Component({
-  selector: 'app-competitions',
+  selector: 'competitions-widget',
   templateUrl: './competitions.component.html',
   styleUrls: ['./competitions.component.css']
 })

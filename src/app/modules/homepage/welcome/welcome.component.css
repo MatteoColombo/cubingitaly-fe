@@ -21,7 +21,7 @@
     height: auto;
 }
 
-.fb .fb-white{
+.ig .ig-white{
     display: none;
 }
 
@@ -30,11 +30,11 @@
     color:#fff;
 }
 
-.fb:hover .fb-white{
+.ig:hover .ig-white{
     display: inline;
 }
 
 
-.fb:hover .fb-color{
+.ig:hover .ig-color{
     display: none;
 }
