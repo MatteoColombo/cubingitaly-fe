@@ -20,7 +20,14 @@
     width: 50%;
     height: auto;
 }
-
+@media screen and (max-width: 599px) {
+    .quick-links{
+        padding:10px;
+    }
+    .quick-links img{
+      width: 95%;
+    }
+  }
 .ig .ig-white{
     display: none;
 }
