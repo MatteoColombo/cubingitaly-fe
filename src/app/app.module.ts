@@ -39,7 +39,12 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faNewspaper, faCopyright } from '@fortawesome/free-regular-svg-icons';
 import { faFacebookF, faTwitter, faTelegram, faYoutube, faTelegramPlane, faInstagram, faGithub, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { LoginComponent } from './components/login/login.component';
 
+import { registerLocaleData } from '@angular/common';
+import localeIt from '@angular/common/locales/it';
+
+registerLocaleData(localeIt, 'it');
 
 @NgModule({
   declarations: [
@@ -50,7 +55,8 @@ import { faFacebookF, faTwitter, faTelegram, faYoutube, faTelegramPlane, faInsta
     NotFoundComponent,
     ErrorDialogComponent,
     ConfirmDialogComponent,
-    BackToTopComponent
+    BackToTopComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +83,8 @@ import { faFacebookF, faTwitter, faTelegram, faYoutube, faTelegramPlane, faInsta
     TitleManagerService,
     ErrorHandlerService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ErrorDialogComponent, ConfirmDialogComponent]
 })
 export class AppModule {
   constructor(library: FaIconLibrary) {

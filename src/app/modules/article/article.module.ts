@@ -6,7 +6,7 @@ import { ArticleComponent } from './article/article.component';
 import { ArticleListComponent } from './article-list/article-list.component';
 import { ArticleListViewerComponent } from './article-list-viewer/article-list-viewer.component';
 import { ArticleService } from './services/article.service';
-import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatPaginatorModule, MatPaginatorIntl} from '@angular/material/paginator';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ArticleCategoryWidgetComponent } from './article-category-widget/article-category-widget.component';
 import { ArticleEditorQuickActionsComponent } from './article-editor-quick-actions/article-editor-quick-actions.component';
@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HtmlViewerModule } from '../html-viewer/html-viewer.module';
 import { ArticleCategoryViewerComponent } from './article-category-viewer/article-category-viewer.component';
+import { ItalianMatPaginator } from './services/article.paginator.it';
 
 @NgModule({
   declarations: [ArticleComponent, ArticleListComponent, ArticleListViewerComponent, ArticleCategoryWidgetComponent, ArticleEditorQuickActionsComponent, ArticleCategoryViewerComponent],
@@ -32,6 +33,6 @@ import { ArticleCategoryViewerComponent } from './article-category-viewer/articl
     MatCardModule,
     HtmlViewerModule
   ],
-  providers: [ArticleService]
+  providers: [ArticleService,{ provide: MatPaginatorIntl, useClass: ItalianMatPaginator }]
 })
 export class ArticleModule { }

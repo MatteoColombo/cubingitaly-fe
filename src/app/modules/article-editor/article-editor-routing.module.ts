@@ -7,6 +7,9 @@ import { ArticleAdminComponent } from './article-admin/article-admin.component';
 
 const routes: Routes = [
   {
+    path: '', canActivate: [ArticleGuardService], redirectTo: 'admin/1', pathMatch: 'full', data: { requiredRole: "admin" }
+  },
+  {
     path: 'admin', canActivate: [ArticleGuardService], redirectTo: 'admin/1', pathMatch: 'full', data: { requiredRole: "admin" }
   },
   {

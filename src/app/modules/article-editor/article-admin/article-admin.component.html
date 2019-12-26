@@ -3,7 +3,7 @@
 
         <div fxLayout="row" fxLayoutAlign="start center">
             <h1 fxFlex="grow">Gestione Articoli</h1>
-            <a routerLink="/articoli/new" fxFlex="noshrink">
+            <a routerLink="/admin/articoli/new" fxFlex="noshrink">
                 <fa-icon icon="plus-square"></fa-icon><span fxHide.lt-md> Nuovo articolo</span>
             </a>
         </div>
@@ -42,7 +42,7 @@
                 <ng-container matColumnDef="options">
                     <mat-header-cell *matHeaderCellDef>Opzioni</mat-header-cell>
                     <mat-cell *matCellDef="let article">
-                        <a routerLink="/articoli/edit/{{article.id}}" aria-label="Modifica articolo">
+                        <a routerLink="/admin/articoli/{{article.id}}" aria-label="Modifica articolo">
                             <fa-icon icon="edit"></fa-icon>
                         </a>
                         <a routerLink="/articoli/{{article.id}}" aria-label="Visualizza articolo">
@@ -85,7 +85,7 @@
                         <div fxLayout fxLayoutAlign="start center">
                             Opzioni:
                             <span fxFlex="grow"></span>
-                            <a routerLink="/articoli/edit/{{article.id}}" aria-label="Modifica articolo">
+                            <a routerLink="/admin/articoli/{{article.id}}" aria-label="Modifica articolo">
                                 <fa-icon icon="edit"></fa-icon>
                             </a>
                             <a routerLink="/articoli/{{article.id}}" aria-label="Visualizza articolo">

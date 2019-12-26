@@ -1,0 +1,27 @@
+<div fxLayout fxLayoutAlign="center">
+  <div fxFlex.gt-sm="80%" fxFlex.lt-md="90%" fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="20px">
+    <div fxFlex.gt-sm="70%">
+      <h1>Effettua l'accesso</h1>
+        <p>
+          Effettua il login utilizzando il tuo account WCA.
+        </p>
+        <p>
+          <strong>PRIVACY POLICY</strong> - Facendo login tramite l'account WCA, acconsentite alla archiviazione di informazioni
+          personali (nome, WCAID) nel nostro Database, esclusivamente allo scopo di erogazione del servizio
+          (pubblicazione e gestione degli articoli, tutorial ecc.). - Cubing Italy utilizza dei cookie tecnici che sono
+          necessari alla normale erogazione del servizio. Tali cookie, che sono piccoli file di testo che vengono
+          scaricati nei file temporanei del tuo browser, sono usati per memorizzare la propria sessione.
+        </p>
+        <div>
+          <a *ifRole="'guest'" mat-button class="wcalogin" (click)="login()">
+            Accedi con il tuo account WCA
+          </a>
+          <a *ifRole="'user'" mat-button class="wcalogin" (click)="logout()">
+            Esci
+          </a>
+        </div>
+    </div>
+    <div fxFlex.gt-sm="30%">
+    </div>
+  </div>
+</div>
