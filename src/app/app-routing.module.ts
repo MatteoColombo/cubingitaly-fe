@@ -9,6 +9,8 @@ const routes: Routes = [
   { loadChildren: 'src/app/modules/homepage/homepage.module#HomepageModule', path: '' },
   { loadChildren: 'src/app/modules/article/article.module#ArticleModule', path: 'articoli' },
   { loadChildren: 'src/app/modules/article-editor/article-editor.module#ArticleEditorModule', path: 'admin/articoli' },
+  { loadChildren: 'src/app/modules/competition-editor/competition-editor.module#CompetitionEditorModule', path: 'admin/competizioni' },
+  { loadChildren: 'src/app/modules/competition/competition.module#CompetitionModule', path: 'competizioni' },
   { path: 'login', component: LoginComponent },
   { path: 'permesso-negato', component: PermissionDeniedComponent },
   { path: 'non-trovato', component: NotFoundComponent },

@@ -1,0 +1,8 @@
+<div fxLayout="column" *ngIf="page">
+    <div fxLayout="row" fxLayoutAlign="start center">
+        <h1 class="page-title" fxFlex="grow">
+            {{page.title[0] |uppercase}}{{page.title.substr(1)}}
+        </h1>
+    </div>
+    <html-viewer [content]="page.content"></html-viewer>
+</div>
