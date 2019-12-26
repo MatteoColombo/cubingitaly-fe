@@ -43,6 +43,7 @@ import { LoginComponent } from './components/login/login.component';
 
 import { registerLocaleData } from '@angular/common';
 import localeIt from '@angular/common/locales/it';
+import { EmailSentDialogComponent } from './components/email-sent-dialog/email-sent-dialog.component';
 
 registerLocaleData(localeIt, 'it');
 
@@ -56,7 +57,8 @@ registerLocaleData(localeIt, 'it');
     ErrorDialogComponent,
     ConfirmDialogComponent,
     BackToTopComponent,
-    LoginComponent
+    LoginComponent,
+    EmailSentDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -84,7 +86,7 @@ registerLocaleData(localeIt, 'it');
     ErrorHandlerService
   ],
   bootstrap: [AppComponent],
-  entryComponents: [ErrorDialogComponent, ConfirmDialogComponent]
+  entryComponents: [ErrorDialogComponent, ConfirmDialogComponent, EmailSentDialogComponent]
 })
 export class AppModule {
   constructor(library: FaIconLibrary) {
