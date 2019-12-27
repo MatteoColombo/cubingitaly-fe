@@ -18,6 +18,7 @@ const routes: Routes = [
   { loadChildren: 'src/app/modules/team/team.module#TeamModule', path: 'team' },
   { loadChildren: 'src/app/modules/tutorial/tutorial.module#TutorialModule', path: 'tutorial' },
   { loadChildren: 'src/app/modules/tutorial-editor/tutorial-editor.module#TutorialEditorModule', path: 'admin/tutorial' },
+  { loadChildren: 'src/app/modules/about-us/about-us.module#AboutUsModule', path: 'chi-siamo' },
   { path: 'pannello', component: PanelComponent },
   { path: 'login', component: LoginComponent },
   { path: 'permesso-negato', component: PermissionDeniedComponent },
