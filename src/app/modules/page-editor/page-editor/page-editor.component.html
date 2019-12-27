@@ -1,0 +1,17 @@
+<div fxLayout="column" *ngIf="page">
+    <div *ngIf="titleEditor">
+        <h2 class="page-title">
+            Modifica pagina
+            <fa-icon icon="check" *ngIf="updated" style="color:green"></fa-icon>
+        </h2>
+        <mat-form-field>
+            <input matInput placeholder="Titolo della pagina" length="120" [(ngModel)]="page.title" />
+        </mat-form-field>
+    </div>
+
+    <ckeditor [editor]="editor" [(ngModel)]="page.content"></ckeditor>
+
+    <button mat-raised-button color="accent" (click)="updatePage()">Salva</button>
+    <button mat-raised-button color="warn" *ngIf="page.content !== contentBackup || page.title !== titleBackup"
+        (click)="restore()">Ripristina</button>
+</div>

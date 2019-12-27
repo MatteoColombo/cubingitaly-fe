@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
 import { PageModel } from 'src/app/models/page.model';
 import { PageService } from '../services/page.service';
 
@@ -7,7 +7,7 @@ import { PageService } from '../services/page.service';
   templateUrl: './page-viewer.component.html',
   styleUrls: ['./page-viewer.component.css']
 })
-export class PageViewerComponent implements OnInit {
+export class PageViewerComponent implements OnInit, OnChanges {
 
   @Input() pageId: number;
   page: PageModel;
@@ -15,9 +15,17 @@ export class PageViewerComponent implements OnInit {
   constructor(private pageSVC: PageService) { }
 
   ngOnInit() {
+
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if(changes['pageId'].currentValue !== changes['pageId'].previousValue && changes['pageId'].currentValue)
+      this.getPage();
+  }
+
+  private getPage(){
     this.pageSVC.getPage(this.pageId).subscribe(res => {
       this.page = res;
     });
   }
-
 }
