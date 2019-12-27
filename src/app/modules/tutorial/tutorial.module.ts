@@ -9,9 +9,10 @@ import { EditorQuickActionsComponent } from './editor-quick-actions/editor-quick
 import { TutorialService } from './services/tutorial.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { PageModule } from '../page/page.module';
-import { MatButtonModule, MatPaginatorModule, MatTableModule } from '@angular/material';
+import { MatButtonModule, MatPaginatorModule, MatTableModule, MatPaginatorIntl } from '@angular/material';
 import { SharedComponentsModule } from '../shared-components/shared-components.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TutorialItalianMatPaginator } from './services/tutorial.paginator.it';
 
 
 @NgModule({
@@ -26,6 +27,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SharedComponentsModule,
     MatTableModule,
     FontAwesomeModule
-  ],providers:[TutorialService]
+  ],providers:[TutorialService, { provide: MatPaginatorIntl, useClass: TutorialItalianMatPaginator }]
 })
 export class TutorialModule { }
