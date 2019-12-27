@@ -1,0 +1,11 @@
+<div fxLayout="column">
+  <h2>Tutorial</h2>
+  <mat-list class="mat-elevation-z1">
+    <mat-list-item>
+      <a routerLink="/admin/tutorial/admin">Gestisci i tutorial</a>
+    </mat-list-item>
+    <mat-list-item *ifRole="'cTutorials'">
+      <a routerLink="/admin/tutorial/new">Nuovo tutorial</a>
+    </mat-list-item>
+  </mat-list>
+</div>

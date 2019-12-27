@@ -44,6 +44,7 @@ import { LoginComponent } from './components/login/login.component';
 import { registerLocaleData } from '@angular/common';
 import localeIt from '@angular/common/locales/it';
 import { EmailSentDialogComponent } from './components/email-sent-dialog/email-sent-dialog.component';
+import { PanelModule } from './modules/panel/panel.module';
 
 registerLocaleData(localeIt, 'it');
 
@@ -73,7 +74,8 @@ registerLocaleData(localeIt, 'it');
     FlexLayoutModule,
     HttpClientModule,
     MatSidenavModule,
-    MatButtonModule
+    MatButtonModule,
+    PanelModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpService, multi: true },

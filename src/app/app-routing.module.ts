@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PermissionDeniedComponent } from './components/permission-denied/permission-denied.component';
 import { LoginComponent } from './components/login/login.component';
+import { PanelComponent } from './modules/panel/panel/panel.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,8 @@ const routes: Routes = [
   { loadChildren: 'src/app/modules/contacts/contacts.module#ContactsModule', path: 'contatti' },
   { loadChildren: 'src/app/modules/faq/faq.module#FaqModule', path: 'faq' },
   { loadChildren: 'src/app/modules/faq-editor/faq-editor.module#FaqEditorModule', path: 'admin/faq' },
+  { loadChildren: 'src/app/modules/team/team.module#TeamModule', path: 'team' },
+  { path: 'pannello', component: PanelComponent },
   { path: 'login', component: LoginComponent },
   { path: 'permesso-negato', component: PermissionDeniedComponent },
   { path: 'non-trovato', component: NotFoundComponent },
