@@ -12,10 +12,12 @@ const routes: Routes = [
   { loadChildren: 'src/app/modules/competition-editor/competition-editor.module#CompetitionEditorModule', path: 'admin/competizioni' },
   { loadChildren: 'src/app/modules/competition/competition.module#CompetitionModule', path: 'competizioni' },
   { loadChildren: 'src/app/modules/contacts/contacts.module#ContactsModule', path: 'contatti' },
+  { loadChildren: 'src/app/modules/faq/faq.module#FaqModule', path: 'faq' },
+  { loadChildren: 'src/app/modules/faq-editor/faq-editor.module#FaqEditorModule', path: 'admin/faq' },
   { path: 'login', component: LoginComponent },
   { path: 'permesso-negato', component: PermissionDeniedComponent },
   { path: 'non-trovato', component: NotFoundComponent },
-  { path: "*", redirectTo: 'non-trovato', pathMatch: 'full' }
+  { path: "**", redirectTo: 'non-trovato', pathMatch: 'full' }
 ];
 
 @NgModule({
