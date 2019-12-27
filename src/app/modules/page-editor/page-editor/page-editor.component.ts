@@ -25,8 +25,6 @@ export class PageEditorComponent implements OnInit {
   constructor(private dialog: MatDialog, private pageSVC: PageEditorService) { }
 
   ngOnInit() {
-    if (this.page.content === undefined || this.page.content === 'undefined')
-      this.page.content = "";
   }
 
   restore() {
@@ -39,6 +37,8 @@ export class PageEditorComponent implements OnInit {
       this.page = res;
       this.contentBackup = this.page.content;
       this.titleBackup = this.page.title;
+      if (this.page.content === undefined || this.page.content === 'undefined')
+        this.page.content = "";
     });
   }
 

@@ -16,6 +16,8 @@ const routes: Routes = [
   { loadChildren: 'src/app/modules/faq/faq.module#FaqModule', path: 'faq' },
   { loadChildren: 'src/app/modules/faq-editor/faq-editor.module#FaqEditorModule', path: 'admin/faq' },
   { loadChildren: 'src/app/modules/team/team.module#TeamModule', path: 'team' },
+  { loadChildren: 'src/app/modules/tutorial/tutorial.module#TutorialModule', path: 'tutorial' },
+  { loadChildren: 'src/app/modules/tutorial-editor/tutorial-editor.module#TutorialEditorModule', path: 'admin/tutorial' },
   { path: 'pannello', component: PanelComponent },
   { path: 'login', component: LoginComponent },
   { path: 'permesso-negato', component: PermissionDeniedComponent },

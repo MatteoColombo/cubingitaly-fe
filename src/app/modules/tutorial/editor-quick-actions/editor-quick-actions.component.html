@@ -1,0 +1,14 @@
+<div fxLayout="column">
+  <h2>Gestione tutorial</h2>
+  <a routerLink="/admin/tutorial/{{tutorialId}}" *ngIf="tutorialId">
+    <fa-icon icon="edit"></fa-icon>
+    Modifica Tutorial
+  </a>
+  <a routerLink="/admin/tutorial/new" *ifRole="'cTutorials'">
+    <fa-icon icon="plus-square"></fa-icon> Nuovo
+    Tutorial
+  </a>
+  <a routerLink="/admin/tutorial/admin">
+    <fa-icon icon="list"></fa-icon> Gestione Tutorial
+  </a>
+</div>
