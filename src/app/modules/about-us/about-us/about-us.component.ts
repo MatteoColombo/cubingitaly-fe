@@ -39,6 +39,7 @@ export class AboutUsComponent implements OnInit, OnDestroy {
   }
 
   public getUsers(id: string): string {
+    console.log("getting users");
     let users: UserModel[] = this.mapTeamMembers[id];
     let result = "";
     if (users) {

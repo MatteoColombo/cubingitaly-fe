@@ -1,0 +1,8 @@
+<div fxLayout="row" fxLayout.xs="column" fxLayoutGap="20px" *ngIf="board">
+    <div fxFlex="200px" fxFlex.xs="100%">
+        <img src="/assets/board/{{board.pic}}" style="width:100%" alt="">
+    </div>
+    <div>
+        <p *ngFor="let desc of board.description" [innerHTML]="desc"></p>
+    </div>
+</div>

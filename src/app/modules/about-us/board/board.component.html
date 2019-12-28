@@ -1,0 +1,15 @@
+<h2>Consiglio Direttivo</h2>
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let b of board">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{b.name}}
+            </mat-panel-title>
+            <mat-panel-description fxHide.lt-md>
+                {{b.role}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <board-member [board]="b"></board-member>
+    
+    </mat-expansion-panel>
+</mat-accordion>
