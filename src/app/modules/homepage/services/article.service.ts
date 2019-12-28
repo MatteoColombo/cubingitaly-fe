@@ -16,7 +16,6 @@ export class ArticleService {
   constructor(private http: HttpClient) { }
 
   public getPublicNews(limit:number): Observable<ArticleModel[]> {
-    console.log(this.apiBase + "?limit=1&page=0&category=news");
     return this.http.get<ArticleModel[]>(this.apiBase + "?limit="+limit+"&page=0&category=news" ).pipe(map(res => Deserialize(res, ArticleModel)));
   }
 
