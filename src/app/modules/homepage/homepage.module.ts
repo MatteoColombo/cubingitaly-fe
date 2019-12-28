@@ -12,6 +12,7 @@ import { ArticleService } from './services/article.service';
 import { HomepageComponent } from './homepage/homepage.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { CompetitionsComponent } from './competitions/competitions.component';
+import { MatCardModule } from '@angular/material';
 
 @NgModule({
   declarations: [ArticleComponent,HomepageComponent,WelcomeComponent,CompetitionsComponent],
@@ -20,7 +21,8 @@ import { CompetitionsComponent } from './competitions/competitions.component';
     HomepageRoutingModule,
     FlexLayoutModule,
     RouterModule,
-    SlideshowModule
+    SlideshowModule,
+    MatCardModule
   ],
   providers: [CompetitionsService,SliderService, ArticleService]
 })

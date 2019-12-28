@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleService } from '../services/article.service';
+import { ArticleModel } from 'src/app/models/article.model';
 
 @Component({
   selector: 'article-widget',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticleComponent implements OnInit {
 
-  constructor() { }
+  article: ArticleModel;
+  constructor(private articleSvc: ArticleService) { }
 
   ngOnInit() {
+    this.articleSvc.getPublicNews(1).subscribe(res => {
+      this.article=res[0];
+    })
   }
 
 }
