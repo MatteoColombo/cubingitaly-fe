@@ -1,0 +1,19 @@
+.mat-radio-button{
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    margin-top:30px;
+    font-size: 18px;
+    padding:10px;
+    width:200px;
+}
+
+.button-xs{
+    width: 100%;
+}
+
+.radio-div{
+    margin-top:30px;
+}

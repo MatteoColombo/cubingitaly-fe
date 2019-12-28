@@ -1,0 +1,21 @@
+h2,h1{
+    margin: 0 0 10px 0 !important;
+}
+
+button{
+    margin-bottom: 40px!important;
+    padding: 10px 0 10px 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.button-xs{
+    width: 100%;
+}
+.button-gt-xs{
+    width: 40%;
+}
+
+.doc h2{
+    margin: 30px 0 10px 0 !important;
+}

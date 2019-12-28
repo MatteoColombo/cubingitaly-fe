@@ -10,20 +10,20 @@ import { PageService } from '../services/page.service';
 export class PageViewerComponent implements OnInit, OnChanges {
 
   @Input() pageId: number;
+  @Input() showTitle: boolean = true;
   page: PageModel;
 
   constructor(private pageSVC: PageService) { }
 
   ngOnInit() {
-
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if(changes['pageId'].currentValue !== changes['pageId'].previousValue && changes['pageId'].currentValue)
+    if (changes['pageId'].currentValue !== changes['pageId'].previousValue && changes['pageId'].currentValue)
       this.getPage();
   }
 
-  private getPage(){
+  private getPage() {
     this.pageSVC.getPage(this.pageId).subscribe(res => {
       this.page = res;
     });

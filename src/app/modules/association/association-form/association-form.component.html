@@ -1,0 +1,105 @@
+<div fxLayout fxLayoutAlign="center">
+    <div fxFlex.gt-sm="80%" fxFlex.lt-md="90%" fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="20px">
+        <div fxFlex.gt-sm="70%">
+            <div fxLayout="column" fxLayoutGap="10px">
+                <form [formGroup]="form">
+                    <h1>Associati</h1>
+                    <p>Per inviare la richiesta di associazione è sufficiente compilare il seguente form. In caso di
+                        dubbi o
+                        per chiarimenti puoi contattarci <a href="mailto:cubingitaly.org">via mail</a>.</p>
+                    <h2>Dati Anagrafici</h2>
+                    <div fxLayout fxLayout.xs="column" fxLayoutGap="40px">
+                        <mat-form-field fxFlex="50%">
+                            <input matInput placeholder="Nome" formControlName="name" type="text" maxlength="50">
+                            <mat-error>È necessario inserire il nome.</mat-error>
+                        </mat-form-field>
+                        <mat-form-field fxFlex="50%">
+                            <input matInput placeholder="Cognome" formControlName="surname" type="text" maxlength="50">
+                            <mat-error>È necessario inserire il cognome.</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout fxLayout.xs="column" fxLayoutGap="40px">
+                        <mat-form-field fxFlex="50%">
+                            <input matInput placeholder="Luogo di nascita" formControlName="birthplace" type="text"
+                                maxlength="50">
+                            <mat-error>È necessario inserire il luogo di nascita.</mat-error>
+                        </mat-form-field>
+                        <mat-form-field fxFlex="50%">
+                            <input matInput [matDatepicker]="picker" placeholder="Data di nascita" formControlName="birthdate">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                            <mat-error>È necessario selezionare una data di nascita valida.</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout fxLayout.xs="column" fxLayoutGap="40px">
+                        <mat-form-field fxFlex="50%">
+                            <input matInput placeholder="Codice Fiscale" formControlName="fiscalCode" type="text"
+                                maxlength="16">
+                            <mat-error>È necessario inserire un codice fiscale valido.</mat-error>
+                            <mat-hint>Gli stranieri devono inserirlo solo se in possesso.</mat-hint>
+                        </mat-form-field>
+                    </div>
+                    <h2>Indirizzo di residenza</h2>
+                    <div fxLayout fxLayout.xs="column" fxLayoutGap="40px">
+                        <mat-form-field fxFlex="50%">
+                            <input matInput placeholder="Via" formControlName="street" type="text" maxlength="50">
+                            <mat-error>È necessario inserire la strada di residenza.</mat-error>
+                        </mat-form-field>
+                        <mat-form-field fxFlex="50%">
+                            <input matInput placeholder="Numero Civico" formControlName="num" type="text"
+                                maxlength="10">
+                            <mat-error>È necessario inserire il numero civico.</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout fxLayout.xs="column" fxLayoutGap="40px">
+                        <mat-form-field fxFlex="50%">
+                            <input matInput placeholder="Città" formControlName="city" type="text" maxlength="50">
+                            <mat-error>È necessario inserire la città di residenza.</mat-error>
+                        </mat-form-field>
+                        <mat-form-field fxFlex="50%">
+                            <input matInput placeholder="Provincia" formControlName="state" type="text" maxlength="50">
+                            <mat-error>È necessario inserire la provincia di residenza.</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout fxLayout.xs="column" fxLayoutGap="40px">
+                        <mat-form-field fxFlex="50%">
+                            <input matInput placeholder="Nazione" formControlName="country" type="text" maxlength="50">
+                            <mat-error>È necessario inserire la nazione di residenza.</mat-error>
+                        </mat-form-field>
+                    </div>
+
+
+
+                    <div fxLayout fxLayout.xs="column" fxLayoutGap="40px">
+                        <div fxFlex="50%">
+                            <h2>Contatti</h2>
+                            <mat-form-field style="width: 100%;">
+                                <input matInput placeholder="Indirizzo email" formControlName="email" type="email"
+                                    maxlength="100">
+                                <mat-error>È necessario inserire un indirizzo email valido.</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex="50%">
+                            <h2>Tipo di socio</h2>
+                            <div class="radio-div">
+                                <mat-radio-group aria-label="Seleziona un'opzione" formControlName="assLevel">
+                                    <mat-radio-button value="base">Socio Base</mat-radio-button>
+                                    <mat-radio-button value="premium">Socio Premium (50€/anno)</mat-radio-button>
+                                </mat-radio-group>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div>
+                        <button ngClass.xs="button-xs" mat-raised-button color="primary"
+                            (click)="submit()">Invia</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div fxFlex.gt-sm="30%">
+        </div>
+    </div>
+</div>

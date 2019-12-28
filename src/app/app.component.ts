@@ -21,6 +21,9 @@ export class AppComponent {
       id: "about", text: "chi siamo", url: "/chi-siamo", isSelected: false, iconPrefix: "fas", icon: "info-circle", login: false
     },
     {
+      id: "association", text: "associazione", url: "/associazione", isSelected: false, iconPrefix: "fas", icon: "sitemap", login: false
+    },
+    {
       id: "articles", text: "articoli", url: "/articoli", isSelected: false, iconPrefix: "far", icon: "newspaper", login: false
     },
     {

@@ -5,7 +5,7 @@ import { PageEditorService } from './services/page-editor.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-import { MatFormFieldModule, MatButtonModule } from '@angular/material';
+import { MatFormFieldModule, MatButtonModule, MatInputModule } from '@angular/material';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
@@ -18,7 +18,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     CKEditorModule,
     MatFormFieldModule,
     FormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule
   ],
   exports:[PageEditorComponent],
   providers:[PageEditorService]
