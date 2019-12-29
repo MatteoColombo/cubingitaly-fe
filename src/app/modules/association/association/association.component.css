@@ -17,5 +17,23 @@ button{
 }
 
 .doc h2{
-    margin: 30px 0 10px 0 !important;
+    margin: 30px 0 30px 0 !important;
+}
+
+fa-icon{
+    font-size:24px;
+    margin-right: 10px;
+}
+
+a{
+    color: #000;
+    margin-left: 10px;
+}
+
+a:hover{
+   font-weight: 700;
+}
+
+mat-expansion-panel-header{
+    font-size: 18px;
 }

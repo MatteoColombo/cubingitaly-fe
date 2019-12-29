@@ -1,16 +1,72 @@
 <div fxLayout fxLayoutAlign="center">
     <div fxFlex.gt-sm="80%" fxFlex.lt-md="90%" fxLayout fxLayout.lt-md="column" fxLayoutGap="40px">
-        <div fxFlex.gt-sm="65%">
+        <div fxFlex.gt-sm="60%">
             <div fxLayout="column">
-                <page-viewer pageId="5" ></page-viewer>
+                <page-viewer pageId="5"></page-viewer>
                 <!--<page-editor titleEditor="true" pageId="5"></page-editor>-->
                 <h2>Associarsi</h2>
                 <page-viewer [showTitle]="false" pageId="6"></page-viewer>
                 <!--<page-editor titleEditor="true" pageId="6"></page-editor>-->
-                <div>   
-                    <a mat-raised-button color="primary" ngClass.xs="button-xs" ngClass.gt-xs="button-gt-xs" href="/associazione/associati" >ASSOCIATI</a>
+                <div>
+                    <a mat-raised-button color="primary" ngClass.xs="button-xs" ngClass.gt-xs="button-gt-xs"
+                        href="/associazione/associati">ASSOCIATI</a>
                 </div>
             </div>
+        </div>
+        <div fxFlex.gt-sm="40%" class="doc">
+            <h2>Documenti</h2>
+            <mat-accordion multi="true">
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        Statuto
+                    </mat-expansion-panel-header>
+                    <a href=""fxLayout fxLayoutAlign="start center">
+                        <fa-icon [icon]="['far','file-pdf']"></fa-icon><span>Statuto dell'associazione</span>
+                    </a>
+
+                </mat-expansion-panel>
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        Mozioni
+                    </mat-expansion-panel-header>
+
+                    <a href=""fxLayout fxLayoutAlign="start center">
+                        <fa-icon [icon]="['far','file-pdf']"></fa-icon><span>Mozione #01 2020</span>
+                    </a>
+                    <a href=""fxLayout fxLayoutAlign="start center">
+                        <fa-icon [icon]="['far','file-pdf']"></fa-icon><span>Mozione #02 2020</span>
+                    </a>
+                    <a href=""fxLayout fxLayoutAlign="start center">
+                        <fa-icon [icon]="['far','file-pdf']"></fa-icon><span>Mozione #03 2020</span>
+                    </a>
+
+                </mat-expansion-panel>
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        Verbali
+                    </mat-expansion-panel-header>
+
+                    <a href=""fxLayout fxLayoutAlign="start center">
+                        <fa-icon [icon]="['far','file-pdf']"></fa-icon><span>Verbale gennaio 2020</span>
+                    </a>
+                    <a href=""fxLayout fxLayoutAlign="start center">
+                        <fa-icon [icon]="['far','file-pdf']"></fa-icon><span>Verbale marzo 2020</span>
+                    </a>
+                    <a href=""fxLayout fxLayoutAlign="start center">
+                        <fa-icon [icon]="['far','file-pdf']"></fa-icon><span>Verbale giugno 2020</span>
+                    </a>
+                    <a href=""fxLayout fxLayoutAlign="start center">
+                        <fa-icon [icon]="['far','file-pdf']"></fa-icon><span>Verbale luglio 2020</span>
+                    </a>
+                    <a href=""fxLayout fxLayoutAlign="start center">
+                        <fa-icon [icon]="['far','file-pdf']"></fa-icon><span>Verbale dicembre 2020</span>
+                    </a>
+
+                </mat-expansion-panel>
+
+            </mat-accordion>
         </div>
     </div>
 </div>

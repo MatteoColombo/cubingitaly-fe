@@ -6,10 +6,10 @@ import { AssociationComponent } from './association/association.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { PageModule } from '../page/page.module';
 import { PageEditorModule } from '../page-editor/page-editor.module';
-import { MatButtonModule, MatTreeModule, MatIconModule, MatFormFieldModule, MatInputModule, MatRadioModule, MatDatepickerModule, MatNativeDateModule, DateAdapter, MAT_DATE_LOCALE } from '@angular/material';
+import { MatButtonModule,  MatIconModule, MatFormFieldModule, MatInputModule, MatRadioModule, MatDatepickerModule, MatNativeDateModule, MatExpansionModule } from '@angular/material';
 import { AssociationFormComponent } from './association-form/association-form.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {  ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PageModule,
     PageEditorModule,
     MatButtonModule,
-    MatTreeModule,
+    MatExpansionModule,
     FontAwesomeModule,
     MatIconModule,
     MatFormFieldModule,
