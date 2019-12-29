@@ -25,9 +25,11 @@
                             <mat-error>È necessario inserire il luogo di nascita.</mat-error>
                         </mat-form-field>
                         <mat-form-field fxFlex="50%">
-                            <input matInput [matDatepicker]="picker" placeholder="Data di nascita" formControlName="birthdate">
+                            <input matInput [matDatepicker]="picker" placeholder="Data di nascita"
+                                formControlName="birthdate">
                             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                             <mat-datepicker #picker></mat-datepicker>
+                            <mat-hint>Nel formato gg/mm/aaaa o gg-mm-aaaa.</mat-hint>
                             <mat-error>È necessario selezionare una data di nascita valida.</mat-error>
                         </mat-form-field>
                     </div>
@@ -77,6 +79,7 @@
                                 <input matInput placeholder="Indirizzo email" formControlName="email" type="email"
                                     maxlength="100">
                                 <mat-error>È necessario inserire un indirizzo email valido.</mat-error>
+                                <mat-hint>Necessario per essere ricontattati.</mat-hint>
                             </mat-form-field>
                         </div>
                         <div fxFlex="50%">

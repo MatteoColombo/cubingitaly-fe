@@ -1,16 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AssociationRequest } from 'src/app/models/association-request.model';
+import { AssociationService } from '../services/association.service';
+import { MatDialog } from '@angular/material';
+import { RequestSentComponent } from 'src/app/components/request-sent/request-sent.component';
+import { TitleManagerService } from 'src/app/services/title-manager.service';
+import { MetaManagerService } from 'src/app/services/meta-manager.service';
 
 @Component({
   selector: 'app-association-form',
   templateUrl: './association-form.component.html',
   styleUrls: ['./association-form.component.css'],
 })
-export class AssociationFormComponent implements OnInit {
+export class AssociationFormComponent implements OnInit, OnDestroy {
+
+
 
   form: FormGroup;
 
-  constructor() { }
+  constructor(private assSVC: AssociationService, private dialog: MatDialog, private titleSVC: TitleManagerService, private metaSVC: MetaManagerService) { }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -27,12 +35,31 @@ export class AssociationFormComponent implements OnInit {
       'email': new FormControl('', [Validators.required, Validators.maxLength(100), Validators.email]),
       'assLevel': new FormControl('', [Validators.required])
     });
+
+    this.titleSVC.setTitle("Associarsi");
+    this.metaSVC.updateMeta("title", "Associarsi");
+    this.metaSVC.updateMeta("og:title", "Associarsi");
+    this.metaSVC.updateMeta("description", "Compila il form sottostante per inviare la richiesta di associazione.");
+    this.metaSVC.updateMeta("og:description", "Compila il form sottostante per inviare la richiesta di associazione.");
   }
+
+  ngOnDestroy(): void {
+    this.metaSVC.resetMeta();
+  }
+
 
 
   submit() {
     if (this.form.valid) {
-      
+      let request: AssociationRequest = new AssociationRequest();
+      request = this.form.value;
+      this.assSVC.sendMail(request).subscribe(res => {
+        this.dialog.open(RequestSentComponent, {
+          minWidth: '200px',
+        }).afterClosed().subscribe(() => {
+          this.form.reset();
+        });
+      });
     }
   }
 }

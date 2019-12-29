@@ -1,75 +1,28 @@
-import { Component, OnInit } from '@angular/core';
-import { FlatTreeControl } from '@angular/cdk/tree';
-import { MatTreeFlattener, MatTreeFlatDataSource } from '@angular/material';
-
-
-interface FoodNode {
-  name: string;
-  children?: FoodNode[];
-}
-
-const TREE_DATA: FoodNode[] = [
-  {
-    name: 'Fruit',
-    children: [
-      {name: 'Apple'},
-      {name: 'Banana'},
-      {name: 'Fruit loops'},
-    ]
-  }, {
-    name: 'Vegetables',
-    children: [
-      {
-        name: 'Green',
-        children: [
-          {name: 'Broccoli'},
-          {name: 'Brussel sprouts'},
-        ]
-      }, {
-        name: 'Orange',
-        children: [
-          {name: 'Pumpkins'},
-          {name: 'Carrots'},
-        ]
-      },
-    ]
-  },
-];
-
-/** Flat node with expandable and level information */
-interface ExampleFlatNode {
-  expandable: boolean;
-  name: string;
-  level: number;
-}
-
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { TitleManagerService } from 'src/app/services/title-manager.service';
+import { MetaManagerService } from 'src/app/services/meta-manager.service';
+import { AssociationService } from '../services/association.service';
 
 @Component({
   selector: 'app-association',
   templateUrl: './association.component.html',
   styleUrls: ['./association.component.css']
 })
-export class AssociationComponent {
+export class AssociationComponent implements OnInit, OnDestroy {
 
-  private _transformer = (node: FoodNode, level: number) => {
-    return {
-      expandable: !!node.children && node.children.length > 0,
-      name: node.name,
-      level: level,
-    };
+  ngOnInit(): void {
+    this.titleSVC.setTitle("Associazione");
+    this.metaSVC.updateMeta("title", "Associazione");
+    this.metaSVC.updateMeta("og:title", "Associazione");
+    this.metaSVC.updateMeta("description", "Cubing Italy è un’associazione culturale e di promozione sociale senza scopo di lucro e si pone come punto di riferimento per lo speedcubing italiano.");
+    this.metaSVC.updateMeta("og:description", "Cubing Italy è un’associazione culturale e di promozione sociale senza scopo di lucro e si pone come punto di riferimento per lo speedcubing italiano.");
   }
 
-  treeControl = new FlatTreeControl<ExampleFlatNode>(
-      node => node.level, node => node.expandable);
-
-  treeFlattener = new MatTreeFlattener(
-      this._transformer, node => node.level, node => node.expandable, node => node.children);
-
-  dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
-
-  constructor() {
-    this.dataSource.data = TREE_DATA;
+  ngOnDestroy(): void {
+    this.metaSVC.resetMeta();
   }
 
-  hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
+
+  constructor(private titleSVC: TitleManagerService, private metaSVC: MetaManagerService, private assSVC: AssociationService) {
+  }
 }
