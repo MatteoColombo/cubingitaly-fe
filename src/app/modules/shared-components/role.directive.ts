@@ -97,6 +97,8 @@ export class RoleDirective implements OnChanges {
         return (u.id !== undefined) && u.canAnnounceCompetition(this.extraParam);
       case "delOrgComp":
         return (u.id !== undefined) && u.isDelOrgOf(this.extraParam);
+      case "manAss":
+          return (u.id !== undefined) && u.canManageAssociation();
       default:
         return false;
     }

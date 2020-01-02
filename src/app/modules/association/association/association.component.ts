@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TitleManagerService } from 'src/app/services/title-manager.service';
 import { MetaManagerService } from 'src/app/services/meta-manager.service';
 import { AssociationService } from '../services/association.service';
+import { AssociationEditorComponent } from '../../association-editor/association-editor/association-editor.component';
+import { AssociationDocumentModel } from 'src/app/models/association-document.model';
 
 @Component({
   selector: 'app-association',
@@ -10,7 +12,17 @@ import { AssociationService } from '../services/association.service';
 })
 export class AssociationComponent implements OnInit, OnDestroy {
 
+  statuto: AssociationDocumentModel[];
+  mozioni: AssociationDocumentModel[];
+  verbali: AssociationDocumentModel[];
+
   ngOnInit(): void {
+    this.assSVC.getDocuments().subscribe(res=>{
+      console.log(res);
+      this.statuto= res.filter((doc:AssociationDocumentModel) => doc.type === 0).sort((a,b)=> a.id-b.id);
+      this.mozioni= res.filter((doc:AssociationDocumentModel) => doc.type === 1).sort((a,b)=> a.id-b.id);
+      this.verbali= res.filter((doc:AssociationDocumentModel) => doc.type === 2).sort((a,b)=> a.id-b.id);
+    });
     this.titleSVC.setTitle("Associazione");
     this.metaSVC.updateMeta("title", "Associazione");
     this.metaSVC.updateMeta("og:title", "Associazione");

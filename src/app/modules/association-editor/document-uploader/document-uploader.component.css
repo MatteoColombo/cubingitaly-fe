@@ -1,0 +1,29 @@
+fa-icon {
+    margin-right: 20px;
+    font-size:24px;
+}
+
+mat-radio-button ~ mat-radio-button{
+    margin-left:20px;
+}
+
+#fs{
+    margin-top:15px;
+}
+
+#dt{
+    margin-bottom:40px;
+}
+
+button ~ button{
+    margin-left: 20px;
+}
+
+.bd{
+    margin-top:30px;
+}
+
+form{
+    padding:10px;
+    border: 1px solid #e4e4e4;
+}

@@ -1,0 +1,37 @@
+<form [formGroup]="form" fxLayout="column" class="mat-elevation-z1">
+    <h2>Gestione documento</h2>
+    <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="1px">
+        <div fxFlex="33%">
+            <h3>Titolo</h3>
+            <mat-form-field style="width:95%">
+                <input matInput maxlength="150" formControlName="title" placeholder="Titolo del documento">
+                <mat-error>È obbligatorio inserire il titolo del documento.</mat-error>
+            </mat-form-field>
+        </div>
+        <div fxFlex="33%">
+            <h3>Selezione file</h3>
+            <button mat-button (click)="fileInput.click()" id="fs">
+                <fa-icon [icon]="['far','file-pdf']"></fa-icon>
+                <span *ngIf="file">{{file.name}}</span>
+                <span *ngIf="!file && isNew">Nessun file selezionato</span>
+                <span *ngIf="!file && !isNew">Carica un nuovo file</span>
+                <input #fileInput type="file" (change)="onFileInput($event)" style="display:none;" accept=".pdf" />
+            </button>
+        </div>
+        <div fxFlex="33%">
+            <h3 id="dt">Tipo di documento</h3>
+            <mat-radio-group formControlName="type" aria-label="Seleziona tipo di documento">
+                <mat-radio-button value="0">Statuto</mat-radio-button>
+                <mat-radio-button value="1">Mozione</mat-radio-button>
+                <mat-radio-button value="2">Verbale</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div fxFlex="100%" fxLayout fxLayoutAlign="start center" class="bd"
+            *ngIf="((!isNew) || (isNew && file)) && form.value.type">
+            <button mat-raised-button color="primary" (click)="onSave()">Salva</button>
+            <button mat-raised-button color="warning" (click)="onCancel()">Annulla</button>
+        </div>
+    </div>
+
+
+</form>

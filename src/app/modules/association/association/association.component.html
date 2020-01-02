@@ -20,8 +20,8 @@
                     <mat-expansion-panel-header>
                         Statuto
                     </mat-expansion-panel-header>
-                    <a href=""fxLayout fxLayoutAlign="start center">
-                        <fa-icon [icon]="['far','file-pdf']"></fa-icon><span>Statuto dell'associazione</span>
+                    <a *ngFor="let s of statuto" href="{{s.path}}" fxLayout fxLayoutAlign="start center">
+                        <fa-icon [icon]="['far','file-pdf']"></fa-icon><span>{{s.title}}</span>
                     </a>
 
                 </mat-expansion-panel>
@@ -31,14 +31,8 @@
                         Mozioni
                     </mat-expansion-panel-header>
 
-                    <a href=""fxLayout fxLayoutAlign="start center">
-                        <fa-icon [icon]="['far','file-pdf']"></fa-icon><span>Mozione #01 2020</span>
-                    </a>
-                    <a href=""fxLayout fxLayoutAlign="start center">
-                        <fa-icon [icon]="['far','file-pdf']"></fa-icon><span>Mozione #02 2020</span>
-                    </a>
-                    <a href=""fxLayout fxLayoutAlign="start center">
-                        <fa-icon [icon]="['far','file-pdf']"></fa-icon><span>Mozione #03 2020</span>
+                    <a *ngFor="let m of mozioni" href="{{m.path}}" fxLayout fxLayoutAlign="start center">
+                        <fa-icon [icon]="['far','file-pdf']"></fa-icon><span>{{m.title}}</span>
                     </a>
 
                 </mat-expansion-panel>
@@ -48,22 +42,9 @@
                         Verbali
                     </mat-expansion-panel-header>
 
-                    <a href=""fxLayout fxLayoutAlign="start center">
-                        <fa-icon [icon]="['far','file-pdf']"></fa-icon><span>Verbale gennaio 2020</span>
+                    <a *ngFor="let v of verbali" href="{{v.path}}" fxLayout fxLayoutAlign="start center">
+                        <fa-icon [icon]="['far','file-pdf']"></fa-icon><span>{{v.title}}</span>
                     </a>
-                    <a href=""fxLayout fxLayoutAlign="start center">
-                        <fa-icon [icon]="['far','file-pdf']"></fa-icon><span>Verbale marzo 2020</span>
-                    </a>
-                    <a href=""fxLayout fxLayoutAlign="start center">
-                        <fa-icon [icon]="['far','file-pdf']"></fa-icon><span>Verbale giugno 2020</span>
-                    </a>
-                    <a href=""fxLayout fxLayoutAlign="start center">
-                        <fa-icon [icon]="['far','file-pdf']"></fa-icon><span>Verbale luglio 2020</span>
-                    </a>
-                    <a href=""fxLayout fxLayoutAlign="start center">
-                        <fa-icon [icon]="['far','file-pdf']"></fa-icon><span>Verbale dicembre 2020</span>
-                    </a>
-
                 </mat-expansion-panel>
 
             </mat-accordion>
