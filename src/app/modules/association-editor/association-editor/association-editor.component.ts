@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AssociationDocumentModel } from 'src/app/models/association-document.model';
 import { AssociationEditorService } from '../services/association-editor.service';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatSort, MatTableDataSource } from '@angular/material';
 import { Observable } from 'rxjs';
 import { ConfirmDialogComponent } from 'src/app/components/confirm-dialog/confirm-dialog.component';
 
@@ -14,8 +14,11 @@ export class AssociationEditorComponent implements OnInit {
 
   showColumns: String[] = ['title', 'type', 'creation', 'update', 'options'];
   documents: AssociationDocumentModel[];
+  dataSource = new MatTableDataSource(this.documents);
   editing: boolean;
   editingDoc: AssociationDocumentModel;
+
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
 
   constructor(private assSVC: AssociationEditorService, private dialog: MatDialog) { }
 
@@ -26,6 +29,8 @@ export class AssociationEditorComponent implements OnInit {
   getDocuments() {
     this.assSVC.getDocuments().subscribe(res => {
       this.documents = res.sort((a, b) => a.id - b.id);
+      this.dataSource = new MatTableDataSource(this.documents);
+      this.dataSource.sort = this.sort;
     });
   }
 
@@ -37,7 +42,6 @@ export class AssociationEditorComponent implements OnInit {
   done(status: boolean) {
     this.editing = false;
     this.editingDoc = null;
-    console.log("what");
     if (status = true) {
       this.getDocuments();
     }
@@ -52,8 +56,7 @@ export class AssociationEditorComponent implements OnInit {
     let obs = this.createDialog("Sei sicuro di voler cancellare il documento?");
     obs.subscribe((res) => {
       if (res) {
-        console.log("deleting");
-        this.assSVC.deleteDocument(id).subscribe(()=>this.getDocuments());
+        this.assSVC.deleteDocument(id).subscribe(() => this.getDocuments());
       }
     })
   }

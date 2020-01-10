@@ -15,7 +15,7 @@
         </div>
         <div fxFlex.gt-sm="40%" class="doc">
             <h2>Documenti</h2>
-            <mat-accordion multi="true">
+            <mat-accordion multi="true" *ngIf="statuto && statuto.length > 0">
                 <mat-expansion-panel>
                     <mat-expansion-panel-header>
                         Statuto
@@ -26,7 +26,7 @@
 
                 </mat-expansion-panel>
 
-                <mat-expansion-panel>
+                <mat-expansion-panel *ngIf="mozioni && mozioni.length > 0">
                     <mat-expansion-panel-header>
                         Mozioni
                     </mat-expansion-panel-header>
@@ -37,7 +37,7 @@
 
                 </mat-expansion-panel>
 
-                <mat-expansion-panel>
+                <mat-expansion-panel *ngIf="verbali && verbali.length > 0">
                     <mat-expansion-panel-header>
                         Verbali
                     </mat-expansion-panel-header>

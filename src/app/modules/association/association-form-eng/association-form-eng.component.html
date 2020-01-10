@@ -1,0 +1,109 @@
+<div fxLayout fxLayoutAlign="center">
+    <div fxFlex.gt-sm="80%" fxFlex.lt-md="90%" fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="20px">
+        <div fxFlex.gt-sm="70%">
+            <div fxLayout="column" fxLayoutGap="10px">
+                <form [formGroup]="form">
+                    <h1>Become a Member</h1>
+                    <div class="justify">
+                        <p>To send the membership request, simply fill in the following form.</p>
+                        <p class="mid-p">
+                            The Board of Directors will contact you to confirm your successfully became a member of Cubing Italy.
+                        </p>
+                        <p class=mid-p>If you have chosen to become a Premium Member you will receive details on the payment of the membership fee by e-mail.
+                        </p>
+                        <p>
+                            If you have doubts or for clarifications you can contact us <a href="mailto:cubingitaly@gmail.com">ny e-mail</a>.
+                        </p>
+                    </div>
+
+                    <h2>Personal Data</h2>
+                    <div fxLayout fxLayout.xs="column" fxLayoutGap="40px">
+                        <mat-form-field fxFlex="50%">
+                            <input matInput placeholder="First name" formControlName="name" type="text" maxlength="50">
+                            <mat-error>Name is required.</mat-error>
+                        </mat-form-field>
+                        <mat-form-field fxFlex="50%">
+                            <input matInput placeholder="Surname" formControlName="surname" type="text" maxlength="50">
+                            <mat-error>Surname is required.</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout fxLayout.xs="column" fxLayoutGap="40px">
+                        <mat-form-field fxFlex="50%">
+                            <input matInput placeholder="Birth place" formControlName="birthplace" type="text"
+                                maxlength="50">
+                            <mat-error>Place of birth must be entered.</mat-error>
+                        </mat-form-field>
+                        <mat-form-field fxFlex="50%">
+                            <input matInput [matDatepicker]="picker" placeholder="Birth date"
+                                formControlName="birthdate">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                            <mat-hint>In the format dd/mm/yyyy o dd-mm-yyyy.</mat-hint>
+                            <mat-error>A valid birth date must be selected.</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <h2>Residential address</h2>
+                    <div fxLayout fxLayout.xs="column" fxLayoutGap="40px">
+                        <mat-form-field fxFlex="50%">
+                            <input matInput placeholder="Street" formControlName="street" type="text" maxlength="50">
+                            <mat-error>It is necessary to enter the street of residence.</mat-error>
+                        </mat-form-field>
+                        <mat-form-field fxFlex="50%">
+                            <input matInput placeholder="House number" formControlName="num" type="text"
+                                maxlength="10">
+                            <mat-error>You must enter the house number.</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout fxLayout.xs="column" fxLayoutGap="40px">
+                        <mat-form-field fxFlex="50%">
+                            <input matInput placeholder="City" formControlName="city" type="text" maxlength="50">
+                            <mat-error>You must enter the city of residence.</mat-error>
+                        </mat-form-field>
+                        <mat-form-field fxFlex="50%">
+                            <input matInput placeholder="Province/State" formControlName="state" type="text" maxlength="50">
+                            <mat-error>The province/state of residence must be entered.</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout fxLayout.xs="column" fxLayoutGap="40px">
+                        <mat-form-field fxFlex="50%">
+                            <input matInput placeholder="Country" formControlName="country" type="text" maxlength="50">
+                            <mat-error> The country of residence must be entered.</mat-error>
+                        </mat-form-field>
+                    </div>
+
+
+
+                    <div fxLayout fxLayout.xs="column" fxLayoutGap="40px">
+                        <div fxFlex="50%">
+                            <h2>Contatti</h2>
+                            <mat-form-field style="width: 100%;">
+                                <input matInput placeholder="Email address" formControlName="email" type="email"
+                                    maxlength="100">
+                                <mat-error>A valid email address is required. </mat-error>
+                                <mat-hint>Required to be contacted.</mat-hint>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex="50%">
+                            <h2>Member type</h2>
+                            <div class="radio-div">
+                                <mat-radio-group aria-label="Select an option" formControlName="assLevel">
+                                    <mat-radio-button value="base">Basic member</mat-radio-button>
+                                    <mat-radio-button value="premium">Premium member (50€/year)</mat-radio-button>
+                                </mat-radio-group>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div>
+                        <button ngClass.xs="button-xs" mat-raised-button color="primary"
+                            (click)="submit()">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div fxFlex.gt-sm="30%">
+        </div>
+    </div>
+</div>

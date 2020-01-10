@@ -12,10 +12,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {  ReactiveFormsModule } from '@angular/forms';
 import { StringDateAdapter } from './adapter/string-date-adapter';
 import { AssociationService } from './services/association.service';
+import { AssociationFormEngComponent } from './association-form-eng/association-form-eng.component';
 
 
 @NgModule({
-  declarations: [AssociationComponent, AssociationFormComponent],
+  declarations: [AssociationComponent, AssociationFormComponent, AssociationFormEngComponent],
   imports: [
     CommonModule,
     AssociationRoutingModule,

@@ -44,7 +44,6 @@ export class AssociationEditorService {
       headers.append('Accept', 'application/json');
       return this.http.put(this.apiBase + "/" + doc.id, fdata, { headers: headers }).pipe(map(res => Deserialize(res, AssociationDocumentModel)));
     } else {
-      console.log("here");
       return this.http.put(this.apiBase + "/" + doc.id, fdata).pipe(map(res => Deserialize(res, AssociationDocumentModel)));
     }
 

@@ -46,6 +46,7 @@ import localeIt from '@angular/common/locales/it';
 import { EmailSentDialogComponent } from './components/email-sent-dialog/email-sent-dialog.component';
 import { PanelModule } from './modules/panel/panel.module';
 import { RequestSentComponent } from './components/request-sent/request-sent.component';
+import { ConfirmEmailEngComponent } from './components/confirm-email-eng/confirm-email-eng.component';
 
 registerLocaleData(localeIt, 'it');
 
@@ -61,7 +62,8 @@ registerLocaleData(localeIt, 'it');
     BackToTopComponent,
     LoginComponent,
     EmailSentDialogComponent,
-    RequestSentComponent
+    RequestSentComponent,
+    ConfirmEmailEngComponent
   ],
   imports: [
     BrowserModule,
@@ -90,7 +92,7 @@ registerLocaleData(localeIt, 'it');
     ErrorHandlerService
   ],
   bootstrap: [AppComponent],
-  entryComponents: [ErrorDialogComponent, ConfirmDialogComponent, EmailSentDialogComponent,RequestSentComponent]
+  entryComponents: [ErrorDialogComponent, ConfirmDialogComponent, ConfirmEmailEngComponent , EmailSentDialogComponent,RequestSentComponent]
 })
 export class AppModule {
   constructor(library: FaIconLibrary) {

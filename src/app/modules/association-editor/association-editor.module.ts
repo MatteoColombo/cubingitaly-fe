@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AssociationEditorRoutingModule } from './association-editor-routing.module';
 import { AssociationEditorComponent } from './association-editor/association-editor.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatTableModule, MatInputModule, MatFormFieldModule, MatButtonModule, MatRadioButton, MatRadioModule, MatDialogModule } from '@angular/material';
+import { MatTableModule, MatInputModule, MatFormFieldModule, MatButtonModule, MatRadioButton, MatRadioModule, MatDialogModule, MatSortModule } from '@angular/material';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DocumentUploaderComponent } from './document-uploader/document-uploader.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -25,6 +25,7 @@ import { AssociationEditorService } from './services/association-editor.service'
     ReactiveFormsModule,
     MatButtonModule,
     MatRadioModule,
+    MatSortModule,
     MatDialogModule
   ],providers:[AssociationGuardService,AssociationEditorService]
 })

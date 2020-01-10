@@ -2,6 +2,7 @@
   <div fxFlex.gt-sm="80%" fxFlex.lt-md="90%" fxLayout="column" fxLayoutGap="20px">
     <h1>Pannello utente</h1>
     <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="2%">
+      <association-panel fxFlex="48%" *ifRole="'manAss'"></association-panel>
       <article-panel fxFlex="48%" *ifRole="'aArticles'"></article-panel>
       <comp-panel fxFlex="48%"></comp-panel>
       <faq-panel fxFlex="48%" *ifRole="'eFaq'"></faq-panel>

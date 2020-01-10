@@ -18,7 +18,6 @@ export class AssociationComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.assSVC.getDocuments().subscribe(res=>{
-      console.log(res);
       this.statuto= res.filter((doc:AssociationDocumentModel) => doc.type === 0).sort((a,b)=> a.id-b.id);
       this.mozioni= res.filter((doc:AssociationDocumentModel) => doc.type === 1).sort((a,b)=> a.id-b.id);
       this.verbali= res.filter((doc:AssociationDocumentModel) => doc.type === 2).sort((a,b)=> a.id-b.id);

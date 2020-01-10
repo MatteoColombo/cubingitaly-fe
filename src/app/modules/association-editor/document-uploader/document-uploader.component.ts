@@ -23,16 +23,13 @@ export class DocumentUploaderComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log("something changed");
     if (changes['document'].currentValue !== changes['document'].previousValue) {
-      console.log(changes['document'].currentValue,changes['document'].previousValue)
       this.setForm();
     }
   }
 
   setForm(){
     if (this.document && this.document.id) {
-      console.log(this.document);
       this.isNew = false;
       this.file = null;
       this.form = new FormGroup({
@@ -58,11 +55,9 @@ export class DocumentUploaderComponent implements OnInit, OnChanges {
   }
 
   onSave() {
-    console.log("saving");
     if (this.form.valid) {
       let document: AssociationDocumentModel = new AssociationDocumentModel();
       document= this.form.value;
-      console.log(document);
       if(!this.isNew){
         document.id=this.document.id;
         if(this.file){
@@ -77,7 +72,6 @@ export class DocumentUploaderComponent implements OnInit, OnChanges {
   }
 
   onCancel() {
-    console.log("canceling");
     this.buttonSelected.emit(false);
   }
 }

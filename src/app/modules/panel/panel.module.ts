@@ -10,6 +10,7 @@ import { MatListModule } from '@angular/material';
 import { SharedComponentsModule } from '../shared-components/shared-components.module';
 import { FaqPanelComponent } from './faq-panel/faq-panel.component';
 import { CompPanelComponent } from './comp-panel/comp-panel.component';
+import { AssociationPanelComponent } from './association-panel/association-panel.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,6 @@ import { CompPanelComponent } from './comp-panel/comp-panel.component';
     MatListModule,
     SharedComponentsModule
   ],
-  declarations: [PanelComponent, ArticlePanelComponent, TeamPanelComponent, TutorialPanelComponent, FaqPanelComponent, CompPanelComponent]
+  declarations: [PanelComponent, ArticlePanelComponent, TeamPanelComponent, TutorialPanelComponent, FaqPanelComponent, CompPanelComponent, AssociationPanelComponent]
 })
 export class PanelModule { }

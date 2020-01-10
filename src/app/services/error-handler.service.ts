@@ -27,7 +27,6 @@ export class ErrorHandlerService extends ErrorHandler {
           data: error.error.message
         });
       } else {
-        console.log(error);
         throw error;
       }
     } else if (error instanceof BadRequestError) {
@@ -37,7 +36,6 @@ export class ErrorHandlerService extends ErrorHandler {
         data: error.message
       });
     } else {
-      console.log(error);
       throw (error);
     }
   }

@@ -18,6 +18,10 @@ export class AssociationService {
     return this.http.post("/api/v0/association/associate", { 'request': request });
   }
 
+  public sendMailEng(request:AssociationRequest): Observable<any> {
+    return this.http.post("/api/v0/association/associate-eng", { 'request': request });
+  }
+
   public getDocuments():Observable<AssociationDocumentModel[]>{
     return this.http.get("/api/v0/association").pipe(map(res => Deserialize(res,AssociationDocumentModel)));
   }
