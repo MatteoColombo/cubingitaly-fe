@@ -2,8 +2,9 @@
     <div fxFlex.gt-sm="80%" fxFlex.lt-md="90%" fxLayout fxLayout.lt-md="column" fxLayoutGap="20px">
         <div fxFlex="100%">
             <h1>Documenti associazione</h1>
-            <button mat-button (click)="newDoc()">
-                Carica documento
+            <button id="uploader" mat-button (click)="newDoc()" *ngIf="!editing">
+                
+                <fa-icon [icon]="['fas','upload']"></fa-icon><span>Nuovo documento</span>
             </button>
             <document-uploader *ngIf="editing" [document]="editingDoc" (buttonSelected)="done($event)"></document-uploader>
 

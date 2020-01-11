@@ -35,7 +35,7 @@ import { AuthService } from './services/auth.service';
 import {
   faHome, faLink, faPlusCircle, faTimesCircle, faArrowCircleUp, faArrowCircleDown, faInfoCircle, faBook, faEnvelope, faLock, faCheck, faEdit,
   faTrash, faPlusSquare, faEye, faList, faWrench, faBars, faLongArrowAltDown, faSignInAlt,
-  faArrowUp, faLongArrowAltUp, faUserSlash, faUserPlus, faUser, faHammer, faTrophy, faQuestion, faAngleDown, faAngleUp, faExternalLinkAlt, faSitemap
+  faArrowUp, faLongArrowAltUp, faUserSlash, faUserPlus, faUser, faHammer, faTrophy, faQuestion, faAngleDown, faAngleUp, faExternalLinkAlt, faSitemap, faUpload
 } from '@fortawesome/free-solid-svg-icons';
 import { faNewspaper, faCopyright, faFilePdf } from '@fortawesome/free-regular-svg-icons';
 import { faFacebookF, faTwitter, faTelegram, faYoutube, faTelegramPlane, faInstagram, faGithub, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
@@ -96,7 +96,7 @@ registerLocaleData(localeIt, 'it');
 })
 export class AppModule {
   constructor(library: FaIconLibrary) {
-    library.addIcons(faHome,faFilePdf, faSitemap, faInfoCircle, faLink, faWrench, faTelegramPlane, faPlusCircle, faSignInAlt, faTimesCircle, faNewspaper, faBook, faEnvelope, faWhatsapp, faLock, faTrash, faCopyright, faArrowUp, faPlusSquare, faEye, faList,
+    library.addIcons(faHome,faFilePdf, faSitemap, faInfoCircle, faLink, faUpload, faWrench, faTelegramPlane, faPlusCircle, faSignInAlt, faTimesCircle, faNewspaper, faBook, faEnvelope, faWhatsapp, faLock, faTrash, faCopyright, faArrowUp, faPlusSquare, faEye, faList,
       faFacebookF, faTwitter, faTelegram, faAngleUp, faHammer, faArrowCircleUp, faExternalLinkAlt, faAngleDown, faArrowCircleDown, faYoutube, faInstagram, faGithub, faCheck, faEdit, faUser, faBars, faLongArrowAltDown, faLongArrowAltUp, faUserSlash, faUserPlus, faTrophy, faQuestion);
   }
 

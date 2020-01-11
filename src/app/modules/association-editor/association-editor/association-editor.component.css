@@ -1,24 +1,16 @@
 table{
     width: 100%;
+    margin-top:20px
 }
 
-@media screen and (max-width: 600px){
+th{
+    font-weight: 700;
+}
 
-    table{
-        border:0;
-    }
+fa-icon ~ span {
+    margin-left: 10px;
+}
 
-    th{
-        display: none;
-    }
-    
-    tr{
-        margin:10px
-    }
-
-    td{
-        display: block;
-        border: 0px;
-    }
-    
+#uploader {
+    margin-bottom:20px
 }

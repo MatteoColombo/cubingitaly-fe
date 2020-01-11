@@ -161,7 +161,7 @@ export class TutorialEditorComponent implements OnInit, OnDestroy {
     }
   }
 
-  private getTutorial() {
+  getTutorial() {
     this.tutorialSVC.adminGetTutorial(this.tutorialId).subscribe(res => {
       this.tutorial = res;
       this.isNew = false;

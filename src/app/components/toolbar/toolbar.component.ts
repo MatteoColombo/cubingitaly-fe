@@ -14,8 +14,10 @@ export class ToolbarComponent implements OnInit {
   @Input() ngModel: boolean = false;
   @Output() ngModelChange = new EventEmitter<boolean>();
   user: UserModel;
-
-  constructor(private auth: AuthService, private router: Router) { }
+  auth: AuthService
+  constructor(auth: AuthService, private router: Router) { 
+    this.auth=auth;
+  }
 
   ngOnInit() {
     this.auth.user().subscribe((res: UserModel) => this.user = res);
