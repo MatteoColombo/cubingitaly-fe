@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class ContactService {
   constructor(private http: HttpClient) { }
 
-  public sendMail(sender: string, email: string, subject: string, message: string): Observable<any> {
-    return this.http.post("/api/v0/contact", { "sender": sender, "email": email, "subject": subject, "message": message });
+  public sendMail(value:any): Observable<any> {
+    return this.http.post("/api/v0/contact", { "sender": value.name, "email": value.email, "subject": value.subject, "message": value.message });
   }
 }

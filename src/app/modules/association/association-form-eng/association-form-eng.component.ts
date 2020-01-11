@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { FormGroup, FormControl, Validators, FormGroupDirective } from '@angular/forms';
 import { AssociationRequest } from 'src/app/models/association-request.model';
 import { AssociationService } from '../services/association.service';
 import { MatDialog } from '@angular/material';
@@ -14,6 +14,7 @@ import { ConfirmEmailEngComponent } from 'src/app/components/confirm-email-eng/c
 })
 export class AssociationFormEngComponent implements OnInit, OnDestroy {
 
+  @ViewChild(FormGroupDirective,{static:true}) formRef: FormGroupDirective;
 
 
   form: FormGroup;
@@ -58,7 +59,7 @@ export class AssociationFormEngComponent implements OnInit, OnDestroy {
         this.dialog.open(ConfirmEmailEngComponent, {
           minWidth: '200px',
         }).afterClosed().subscribe(() => {
-          this.form.reset();
+          this.formRef.resetForm();
         });
       });
     }

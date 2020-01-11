@@ -41,7 +41,7 @@
                                 formControlName="birthdate">
                             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                             <mat-datepicker #picker></mat-datepicker>
-                            <mat-hint>In the format dd/mm/yyyy o dd-mm-yyyy.</mat-hint>
+                            <mat-hint>In the format dd/mm/yyyy (eg. 8/7/1990 or 08/07/1990).</mat-hint>
                             <mat-error>A valid birth date must be selected.</mat-error>
                         </mat-form-field>
                     </div>
@@ -120,12 +120,10 @@
                             </span>
                         </div>
 
-
-                        <mat-error *ngIf="!le.checked || !co.checked">È necessario accettare le condizioni.</mat-error>
                     </div>
 
 
-                    <div>
+                    <div *ngIf="le.checked && co.checked">
                         <button ngClass.xs="button-xs" mat-raised-button color="primary"
                             (click)="submit()">Submit</button>
                     </div>

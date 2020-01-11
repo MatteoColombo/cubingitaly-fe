@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormControl, Validators, FormGroup, FormGroupDirective } from '@angular/forms';
 import { ContactService } from '../services/contact.service';
 import { TitleManagerService } from 'src/app/services/title-manager.service';
 import { MetaManagerService } from 'src/app/services/meta-manager.service';
@@ -13,26 +13,8 @@ import { EmailSentDialogComponent } from 'src/app/components/email-sent-dialog/e
 })
 export class ContactComponent implements OnInit {
 
-  nameFormControl = new FormControl('', [
-    Validators.required,
-    Validators.minLength(3),
-  ]);
-
-  emailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email,
-  ]);
-
-  subjectFormControl = new FormControl('', [
-    Validators.required,
-    Validators.minLength(5),
-  ]);
-
-  messageFormControl = new FormControl('', [
-    Validators.required,
-    Validators.minLength(3),
-  ]);
-
+  @ViewChild(FormGroupDirective,{static:true}) formRef: FormGroupDirective;
+  form:FormGroup;
 
   constructor(private dialog: MatDialog, private titleSVC: TitleManagerService, private contactSVC: ContactService, private metaSVC: MetaManagerService) { }
 
@@ -42,6 +24,12 @@ export class ContactComponent implements OnInit {
     this.metaSVC.updateMeta("og:title", "Contatti");
     this.metaSVC.updateMeta("description", "Compila il form sottostante e sarai ricontattato al più presto via email.");
     this.metaSVC.updateMeta("og:description", "Compila il form sottostante e sarai ricontattato al più presto via email.");
+    this.form= new FormGroup({
+      'name': new FormControl('',[Validators.required,Validators.minLength(3)]),
+      'email': new FormControl('',[Validators.required,Validators.email]),
+      'subject': new FormControl('',[Validators.required,Validators.minLength(5)]),
+      'message': new FormControl('',[Validators.required,Validators.minLength(3)]),
+    })
   }
 
   ngOnDestroy() {
@@ -50,16 +38,13 @@ export class ContactComponent implements OnInit {
 
 
   submit() {
-    if (this.messageFormControl.valid && this.emailFormControl.valid && this.subjectFormControl.valid && this.nameFormControl.valid) {
-      this.contactSVC.sendMail(this.nameFormControl.value, this.emailFormControl.value, this.subjectFormControl.value, this.messageFormControl.value)
+    if (this.form.valid) {
+      this.contactSVC.sendMail(this.form.value)
         .subscribe(() => {
           this.dialog.open(EmailSentDialogComponent, {
             minWidth: '200px',
           }).afterClosed().subscribe(() => {
-            this.messageFormControl.reset();
-            this.nameFormControl.reset();
-            this.subjectFormControl.reset();
-            this.emailFormControl.reset();
+            this.formRef.resetForm();
           });
         });
     }
