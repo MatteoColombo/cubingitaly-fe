@@ -7,17 +7,20 @@
                     <div class="justify">
                         <p>To send the membership request, simply fill in the following form.</p>
                         <p class="mid-p">
-                            The Board of Directors will contact you to confirm your successfully became a member of Cubing Italy.
+                            The Board of Directors will contact you to confirm your successfully became a member of
+                            Cubing Italy.
                         </p>
-                        <p class=mid-p>If you have chosen to become a Premium Member you will receive details on the payment of the membership fee by e-mail.
+                        <p class=mid-p>If you have chosen to become a Premium Member you will receive details on the
+                            payment of the membership fee by e-mail.
                         </p>
                         <p>
-                            If you have doubts or for clarifications you can contact us <a href="mailto:board@cubingitaly.org">by e-mail</a>.
+                            If you have doubts or for clarifications you can contact us <a
+                                href="mailto:board@cubingitaly.org">by e-mail</a>.
                         </p>
                     </div>
 
                     <h2>Personal Data</h2>
-                    <div fxLayout fxLayout.xs="column" fxLayoutGap="40px">
+                    <div fxLayout fxLayout.xs="column" fxLayoutGap="40px" fxLayoutGap.xs="10px">
                         <mat-form-field fxFlex="50%">
                             <input matInput placeholder="First name" formControlName="name" type="text" maxlength="50">
                             <mat-error>Name is required.</mat-error>
@@ -27,7 +30,7 @@
                             <mat-error>Surname is required.</mat-error>
                         </mat-form-field>
                     </div>
-                    <div fxLayout fxLayout.xs="column" fxLayoutGap="40px">
+                    <div fxLayout fxLayout.xs="column" fxLayoutGap="40px" fxLayoutGap.xs="10px">
                         <mat-form-field fxFlex="50%">
                             <input matInput placeholder="Birth place" formControlName="birthplace" type="text"
                                 maxlength="50">
@@ -43,28 +46,28 @@
                         </mat-form-field>
                     </div>
                     <h2>Residential address</h2>
-                    <div fxLayout fxLayout.xs="column" fxLayoutGap="40px">
+                    <div fxLayout fxLayout.xs="column" fxLayoutGap="40px" fxLayoutGap.xs="10px">
                         <mat-form-field fxFlex="50%">
                             <input matInput placeholder="Street" formControlName="street" type="text" maxlength="50">
                             <mat-error>It is necessary to enter the street of residence.</mat-error>
                         </mat-form-field>
                         <mat-form-field fxFlex="50%">
-                            <input matInput placeholder="House number" formControlName="num" type="text"
-                                maxlength="10">
+                            <input matInput placeholder="House number" formControlName="num" type="text" maxlength="10">
                             <mat-error>You must enter the house number.</mat-error>
                         </mat-form-field>
                     </div>
-                    <div fxLayout fxLayout.xs="column" fxLayoutGap="40px">
+                    <div fxLayout fxLayout.xs="column" fxLayoutGap="40px" fxLayoutGap.xs="10px">
                         <mat-form-field fxFlex="50%">
                             <input matInput placeholder="City" formControlName="city" type="text" maxlength="50">
                             <mat-error>You must enter the city of residence.</mat-error>
                         </mat-form-field>
                         <mat-form-field fxFlex="50%">
-                            <input matInput placeholder="Province/State" formControlName="state" type="text" maxlength="50">
+                            <input matInput placeholder="Province/State" formControlName="state" type="text"
+                                maxlength="50">
                             <mat-error>The province/state of residence must be entered.</mat-error>
                         </mat-form-field>
                     </div>
-                    <div fxLayout fxLayout.xs="column" fxLayoutGap="40px">
+                    <div fxLayout fxLayout.xs="column" fxLayoutGap="40px" fxLayoutGap.xs="10px">
                         <mat-form-field fxFlex="50%">
                             <input matInput placeholder="Country" formControlName="country" type="text" maxlength="50">
                             <mat-error> The country of residence must be entered.</mat-error>
@@ -73,7 +76,7 @@
 
 
 
-                    <div fxLayout fxLayout.xs="column" fxLayoutGap="40px">
+                    <div fxLayout fxLayout.xs="column" fxLayoutGap="40px" fxLayoutGap.xs="10px">
                         <div fxFlex="50%">
                             <h2>Contatti</h2>
                             <mat-form-field style="width: 100%;">
@@ -93,6 +96,32 @@
                             </div>
                         </div>
 
+                    </div>
+
+                    <div fxLayout="column" class="checkboxes">
+                        <div>
+                            <mat-checkbox formControlName="privacy" #le>
+                            </mat-checkbox>
+                            <span>
+                                I confirm that I have read and accepted the provisions of the Association Bylaws.<a
+                                    href="/caricamenti/cubing_italy_bylaws__english_version.pdf" target="_blank">
+                                    <fa-icon [icon]="['far','question-circle']"></fa-icon>
+                                </a>
+                            </span>
+                        </div>
+                        <div>
+                            <mat-checkbox formControlName="gdpr" #co>
+                            </mat-checkbox>
+                            <span>
+                                I authorize the Association to process Personal Data pursuant to EU Regulation 2016/679.
+                                <a href="https://gdpr.eu/tag/gdpr/" target="_blank">
+                                    <fa-icon [icon]="['far','question-circle']"></fa-icon>
+                                </a>
+                            </span>
+                        </div>
+
+
+                        <mat-error *ngIf="!le.checked || !co.checked">È necessario accettare le condizioni.</mat-error>
                     </div>
 
 

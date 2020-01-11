@@ -37,3 +37,7 @@ a:hover{
 mat-expansion-panel-header{
     font-size: 18px;
 }
+
+.container{
+    margin-bottom:40px;
+}

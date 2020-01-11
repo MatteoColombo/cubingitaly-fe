@@ -32,7 +32,9 @@ export class AssociationFormEngComponent implements OnInit, OnDestroy {
       'state': new FormControl('', [Validators.required, Validators.maxLength(50)]),
       'country': new FormControl('', [Validators.required, Validators.maxLength(50)]),
       'email': new FormControl('', [Validators.required, Validators.maxLength(100), Validators.email]),
-      'assLevel': new FormControl('', [Validators.required])
+      'assLevel': new FormControl('', [Validators.required]),
+      'privacy': new FormControl('',[Validators.required]),
+      'gdpr': new FormControl('',[Validators.required])
     });
 
     this.titleSVC.setTitle("Become a member");

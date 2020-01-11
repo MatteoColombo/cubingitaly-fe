@@ -33,7 +33,7 @@ export class DocumentUploaderComponent implements OnInit, OnChanges {
       this.isNew = false;
       this.file = null;
       this.form = new FormGroup({
-        "title": new FormControl(this.document.title, [Validators.required]),
+        "title": new FormControl(this.document.title, [Validators.required,Validators.pattern(/^[a-zA-Z\à\è\é\ì\ò\ù\À\È\É\Ì\Ò\Ù]+[a-zA-Z0-9\à\è\é\ì\ò\ù\À\È\É\Ì\Ò\Ù\_\-\.\\\/\s]+[a-zA-Z0-9\à\è\é\ì\ò\ù\À\È\É\Ì\Ò\Ù]+$/)]),
         "type": new FormControl(this.document.type.toString(), [Validators.required])
       });
     } else {

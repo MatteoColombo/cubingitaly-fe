@@ -25,3 +25,14 @@ button{
 .mid-p{
     margin:0;
 }
+
+mat-checkbox{
+    margin-right: 10px;
+}
+.checkboxes{
+    margin-top:40px;
+}
+
+a fa-icon{
+    color:#000;
+}

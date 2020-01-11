@@ -5,7 +5,7 @@ import { AssociationRoutingModule } from './association-routing.module';
 import { AssociationComponent } from './association/association.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { PageModule } from '../page/page.module';
-import { MatButtonModule,  MatIconModule, MatFormFieldModule, MatInputModule, MatRadioModule, MatDatepickerModule, MatNativeDateModule, MatExpansionModule, DateAdapter } from '@angular/material';
+import { MatButtonModule,  MatIconModule, MatFormFieldModule, MatInputModule, MatRadioModule, MatDatepickerModule, MatNativeDateModule, MatExpansionModule, DateAdapter, MatCheckboxModule } from '@angular/material';
 import { AssociationFormComponent } from './association-form/association-form.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {  ReactiveFormsModule } from '@angular/forms';
@@ -30,7 +30,8 @@ import { AssociationFormEngComponent } from './association-form-eng/association-
     ReactiveFormsModule,
     MatRadioModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatCheckboxModule
   ],providers:[
     AssociationService,
     {provide: DateAdapter, useClass: StringDateAdapter},

@@ -21,27 +21,14 @@ a{
 }
 
 img{
-    width: 40%;
-    height: auto;
     padding:10px;
 }
-
-@media screen and (max-width: 1279px) {
-
-    img{
-        width: 75%;
-    }
-}
-
 
 @media screen and (max-width: 959px) {
     .who-we-are, .quick-links{
         padding:10px;
     }
 
-    img{
-        width: 95%;
-    }
 }
 
 
