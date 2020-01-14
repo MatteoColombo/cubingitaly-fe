@@ -1,0 +1,22 @@
+<div fxLayout fxLayoutAlign="center">
+    <div fxFlex.gt-sm="80%" fxFlex.lt-md="90%" fxLayout="column" fxLayoutGap="30px">
+
+        <div fxLayout="row" fxLayoutAlign="start center">
+            <h1 fxFlex="grow">Gestione Pagine</h1>
+        </div>
+
+        <div *ngIf="pages && pages.length>0">
+            <mat-form-field>
+                <mat-label>Seleziona la pagina da modificare</mat-label>
+                <mat-select (selectionChange)="pageChanged($event)">
+                    <mat-option value="-1">Nessuna</mat-option>
+                    <mat-option *ngFor="let page of pages" [value]="page.id">
+                        {{page.title}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <page-editor *ngIf="editingPage" [pageId]="editingPage" [titleEditor]="true"></page-editor>
+        </div>
+    </div>
+</div>

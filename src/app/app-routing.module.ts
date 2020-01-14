@@ -21,6 +21,7 @@ const routes: Routes = [
   { loadChildren: 'src/app/modules/about-us/about-us.module#AboutUsModule', path: 'chi-siamo' },
   { loadChildren: 'src/app/modules/association/association.module#AssociationModule', path: 'associazione' },
   { loadChildren: 'src/app/modules/association-editor/association-editor.module#AssociationEditorModule', path: 'admin/associazione' },
+  { loadChildren: 'src/app/modules/page-admin/page-admin.module#PageAdminModule', path: 'admin/pagine' },
   { path: 'pannello', component: PanelComponent },
   { path: 'login', component: LoginComponent },
   { path: 'permesso-negato', component: PermissionDeniedComponent },

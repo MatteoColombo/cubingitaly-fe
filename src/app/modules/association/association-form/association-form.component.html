@@ -3,25 +3,7 @@
         <div fxFlex.gt-sm="70%">
             <div fxLayout="column" fxLayoutGap="10px">
                 <form [formGroup]="form">
-                    <h1>Associati</h1>
-                    <div class="justify">
-                        <p>Per inviare la richiesta di associazione è sufficiente compilare il seguente form.</p>
-                        <p class="mid-p">
-                            Il Consiglio Direttivo ti contatterà per confermarti dell'avvenuta associazione a Cubing
-                            Italy.
-                        </p>
-                        <p class=mid-p>Nel caso avessi scelto di diventare Socio Premium riceverai dettagli sul
-                            pagamento della
-                            quota
-                            associativa via e-mail.
-                        </p>
-                        <p>
-                            In caso di dubbi o per chiarimenti puoi contattarci <a
-                                href="mailto:board@cubingitaly.org">via
-                                e-mail</a>.
-                        </p>
-                    </div>
-
+                    <page-viewer pageId="7"></page-viewer>
                     <h2>Dati Anagrafici</h2>
                     <div fxLayout fxLayout.xs="column" fxLayoutGap="40px" fxLayoutGap.xs="10px">
                         <mat-form-field fxFlex="50%">
@@ -70,7 +52,7 @@
                     </div>
                     <div fxLayout fxLayout.xs="column" fxLayoutGap="40px" fxLayoutGap.xs="10px">
                         <mat-form-field fxFlex="50%">
-                            <input matInput placeholder="City" formControlName="city" type="text" maxlength="50">
+                            <input matInput placeholder="Città" formControlName="city" type="text" maxlength="50">
                             <mat-error>È necessario inserire la città di residenza.</mat-error>
                         </mat-form-field>
                         <mat-form-field fxFlex="50%">

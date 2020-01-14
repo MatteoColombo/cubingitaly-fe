@@ -11,6 +11,7 @@ import { SharedComponentsModule } from '../shared-components/shared-components.m
 import { FaqPanelComponent } from './faq-panel/faq-panel.component';
 import { CompPanelComponent } from './comp-panel/comp-panel.component';
 import { AssociationPanelComponent } from './association-panel/association-panel.component';
+import { PagePanelComponent } from './page-panel/page-panel.component';
 
 @NgModule({
   imports: [
@@ -20,6 +21,6 @@ import { AssociationPanelComponent } from './association-panel/association-panel
     MatListModule,
     SharedComponentsModule
   ],
-  declarations: [PanelComponent, ArticlePanelComponent, TeamPanelComponent, TutorialPanelComponent, FaqPanelComponent, CompPanelComponent, AssociationPanelComponent]
+  declarations: [PanelComponent, ArticlePanelComponent, TeamPanelComponent, TutorialPanelComponent, FaqPanelComponent, CompPanelComponent, AssociationPanelComponent, PagePanelComponent]
 })
 export class PanelModule { }

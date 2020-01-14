@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, SimpleChange } from '@angular/core';
+import { Component, OnInit, Input, SimpleChange, Output, EventEmitter } from '@angular/core';
 import { PageModel } from 'src/app/models/page.model';
 import * as Editor from 'src/assets/ckeditor/ckeditor';
 import { MatDialog } from '@angular/material';
@@ -15,6 +15,7 @@ export class PageEditorComponent implements OnInit {
 
   @Input() pageId: number;
   @Input() titleEditor: boolean = false;
+  @Output() saved: EventEmitter<boolean> = new EventEmitter<boolean>();
   page: PageModel;
   editor = Editor;
 
@@ -85,6 +86,7 @@ export class PageEditorComponent implements OnInit {
   private scrollToTitle() {
     const pageTitle = document.querySelector('.page-title') as HTMLElement;
     pageTitle.scrollIntoView();
+    this.saved.emit(true);
   }
 
   private showUpdateMessage() {

@@ -11,6 +11,7 @@ export class PageViewerComponent implements OnInit, OnChanges {
 
   @Input() pageId: number;
   @Input() showTitle: boolean = true;
+  @Input() smallTitle: boolean = false;
   page: PageModel;
 
   constructor(private pageSVC: PageService) { }

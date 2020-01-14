@@ -74,7 +74,7 @@ export class StringDateAdapter extends DateAdapter<string> {
         if (!this.isValid(date)) {
             throw Error(`StringDateAdapter: invalid date ${date}`);
         }
-        const dtf = new Intl.DateTimeFormat(this.locale, displayFormat);
+        const dtf = new Intl.DateTimeFormat('it', displayFormat);
         return dtf.format(this._toNativeDate(date));
     }
     addCalendarYears(date: string, years: number): string {

@@ -3,22 +3,7 @@
         <div fxFlex.gt-sm="70%">
             <div fxLayout="column" fxLayoutGap="10px">
                 <form [formGroup]="form">
-                    <h1>Become a Member</h1>
-                    <div class="justify">
-                        <p>To send the membership request, simply fill in the following form.</p>
-                        <p class="mid-p">
-                            The Board of Directors will contact you to confirm your successfully became a member of
-                            Cubing Italy.
-                        </p>
-                        <p class=mid-p>If you have chosen to become a Premium Member you will receive details on the
-                            payment of the membership fee by e-mail.
-                        </p>
-                        <p>
-                            If you have doubts or for clarifications you can contact us <a
-                                href="mailto:board@cubingitaly.org">by e-mail</a>.
-                        </p>
-                    </div>
-
+                    <page-viewer pageId="8"></page-viewer>
                     <h2>Personal Data</h2>
                     <div fxLayout fxLayout.xs="column" fxLayoutGap="40px" fxLayoutGap.xs="10px">
                         <mat-form-field fxFlex="50%">
@@ -78,7 +63,7 @@
 
                     <div fxLayout fxLayout.xs="column" fxLayoutGap="40px" fxLayoutGap.xs="10px">
                         <div fxFlex="50%">
-                            <h2>Contatti</h2>
+                            <h2>Contact</h2>
                             <mat-form-field style="width: 100%;">
                                 <input matInput placeholder="Email address" formControlName="email" type="email"
                                     maxlength="100">
